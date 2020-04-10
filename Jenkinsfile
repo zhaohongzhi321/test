@@ -18,5 +18,11 @@ npm run build'''
       }
     }
 
+    stage('build2') {
+      steps {
+        archiveArtifacts(onlyIfSuccessful: true, artifacts: 'test', allowEmptyArchive: true, caseSensitive: true, defaultExcludes: true)
+      }
+    }
+
   }
 }
