@@ -14,13 +14,17 @@ rm -rf ./base-project/src
 cp -r ./test_master ./base-project/src
 cd ./base-project/
 rm -rf dist
-npm run build'''
+npm run build
+cd ./dist/build
+zip -r h5.zip ./h5/
+cd ../../../
+cp ./base-project/dist/build/h5.zip ./test_master/'''
       }
     }
 
     stage('build2') {
       steps {
-        archiveArtifacts(onlyIfSuccessful: true, artifacts: 'test', allowEmptyArchive: true, caseSensitive: true, defaultExcludes: true)
+        archiveArtifacts(onlyIfSuccessful: true, artifacts: '*.zip', allowEmptyArchive: true, caseSensitive: true, defaultExcludes: true)
       }
     }
 
