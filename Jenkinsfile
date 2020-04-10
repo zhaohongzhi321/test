@@ -1,12 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('update') {
-      steps {
-        git(url: 'https://github.com/zhaohongzhi321/test.git', branch: 'master', changelog: true, poll: true)
-      }
-    }
-
     stage('build') {
       steps {
         sh '''cd ..
@@ -22,7 +16,7 @@ cp ./base-project/dist/build/h5.zip ./test_master/'''
       }
     }
 
-    stage('build2') {
+    stage('archive') {
       steps {
         archiveArtifacts(onlyIfSuccessful: true, artifacts: '*.zip', allowEmptyArchive: true, caseSensitive: true, defaultExcludes: true)
       }
