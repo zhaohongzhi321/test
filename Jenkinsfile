@@ -10,14 +10,10 @@ pipeline {
     stage('build') {
       steps {
         sh '''cd ..
-rm -rf ./src
-cp -r ./test_master ./src
-zip -r src.zip src
-cp src.zip ./base-project/
+rm -rf ./base-project/src
+cp -r ./test_master ./base-project/src
 cd ./base-project/
-rm -rf src
 rm -rf dist
-unzip src.zip
 npm run build'''
       }
     }
