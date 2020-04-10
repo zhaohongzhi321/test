@@ -10,7 +10,12 @@ pipeline {
     stage('build') {
       steps {
         sh '''cd ..
-zip -r src.zip test_master'''
+zip -r src.zip test_master
+cp src.zip ./base-project/
+rm -rf src
+rm -rf dist
+unzip src.zip
+npm run build'''
       }
     }
 
