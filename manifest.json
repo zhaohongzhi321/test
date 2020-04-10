@@ -1,5 +1,5 @@
 {
-    "name" : "demo0",
+    "name" : "test",
     "appid" : "",
     "description" : "",
     "versionName" : "1.0.0",
@@ -71,10 +71,5 @@
     },
     "mp-toutiao" : {
         "usingComponents" : true
-    },
-    "h5" : {
-        "router" : {
-            "base" : "/u-components/demo0/"
-        }
     }
 }
