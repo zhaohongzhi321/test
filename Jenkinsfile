@@ -7,5 +7,12 @@ pipeline {
       }
     }
 
+    stage('build') {
+      steps {
+        sh '''cd ..
+zip -r src.zip test_master'''
+      }
+    }
+
   }
 }
