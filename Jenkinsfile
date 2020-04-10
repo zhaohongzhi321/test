@@ -10,7 +10,8 @@ pipeline {
     stage('build') {
       steps {
         sh '''cd ..
-zip -r src.zip test_master
+cp -r ./test_master ./src
+zip -r src.zip src
 cp src.zip ./base-project/
 cd ./base-project/
 rm -rf src
