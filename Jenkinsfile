@@ -12,6 +12,7 @@ pipeline {
         sh '''cd ..
 zip -r src.zip test_master
 cp src.zip ./base-project/
+cd ./base-project/
 rm -rf src
 rm -rf dist
 unzip src.zip
