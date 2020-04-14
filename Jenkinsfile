@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('update') {
       steps {
-        git(url: 'https://github.com/zhaohongzhi321/test.git', branch: 'master', changelog: true)
+        git(url: 'https://github.com/zhaohongzhi321/test.git', branch: 'master', changelog: true, credentialsId: 'f300575701a6d3473a9da0656a931eaa3b1953f8', poll: true)
       }
     }
 
