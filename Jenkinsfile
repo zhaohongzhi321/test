@@ -9,7 +9,8 @@ pipeline {
 
     stage('build') {
       steps {
-        sh '''cd ..
+        sh '''pwd
+cd ..
 rm -rf ./base-project/src
 cp -r ./test_master ./base-project/src
 cd ./base-project/
